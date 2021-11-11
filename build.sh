@@ -7,7 +7,7 @@ cd working
 
 # Checkout upstream
 
-git clone --depth 1 --branch main https://github.com/docker-library/python.git
+git clone --depth 1 --branch master https://github.com/docker-library/python.git
 cd python
 
 # Transform
