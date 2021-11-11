@@ -20,5 +20,4 @@ docker build --tag ghcr.io/golden-containers/python:3.10-bullseye 3.10/bullseye
 
 # Push
 
-docker push
-# ghcr.io/golden-containers/python:3.10-bullseye
+docker push ghcr.io/golden-containers/python -a
