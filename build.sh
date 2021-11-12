@@ -12,7 +12,10 @@ cd python
 
 # Transform
 
-sed -i -e "1 s/FROM.*/FROM ghcr.io\/golden-containers\/buildpack-deps\:bullseye/; t" -e "1,// s//FROM ghcr.io\/golden-containers\/buildpack-deps\:bullseye/" 3.10/bullseye/Dockerfile
+# This sed syntax is GNU sed specific
+[ -z $(command -v gsed) ] && GNU_SED=sed || GNU_SED=gsed
+
+${GNU_SED} -i -e "1 s/FROM.*/FROM ghcr.io\/golden-containers\/buildpack-deps\:bullseye/; t" -e "1,// s//FROM ghcr.io\/golden-containers\/buildpack-deps\:bullseye/" 3.10/bullseye/Dockerfile
 
 # Build
 
