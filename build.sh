@@ -13,11 +13,10 @@ cd python
 # Transform
 
 sed -i -e "1 s/FROM.*/FROM ghcr.io\/golden-containers\/buildpack-deps\:bullseye/; t" -e "1,// s//FROM ghcr.io\/golden-containers\/buildpack-deps\:bullseye/" 3.10/bullseye/Dockerfile
-echo "LABEL ${1:-DEBUG=TRUE}" >> 3.10/bullseye/Dockerfile
 
 # Build
 
-docker build --tag ghcr.io/golden-containers/python:3.10-bullseye 3.10/bullseye
+docker build 3.10/bullseye/ --tag ghcr.io/golden-containers/python:3.10-bullseye --label ${1:-DEBUG=TRUE}
 
 # Push
 
